@@ -1,0 +1,13 @@
+diff --git a/meshpy/gmsh_reader.py b/meshpy/gmsh_reader.py
+index b4d0ef2..8c07da1 100644
+--- a/meshpy/gmsh_reader.py
++++ b/meshpy/gmsh_reader.py
+@@ -570,7 +570,7 @@ def parse_gmsh(receiver, line_iterable, force_dimension=None):
+                     raise GmshFileFormatError(
+                             "unexpected number of nodes in element")
+ 
+-                gmsh_vertex_nrs = node_indices[:element_type.vertex_count()]
++                gmsh_vertex_nrs = node_indices #node_indices[:element_type.vertex_count()]
+                 zero_based_idx = element_idx - 1
+ 
+                 tag_numbers = [tag for tag in tags[:1] if tag != 0]
