@@ -236,8 +236,8 @@ def get_expanded_double_layer_kernel(order):
 
 def get_expanded_newton_kernel(order):
     with MaximaSession() as _:
-        _("k(eps) := (1 / (4 * %pi)) * log(rsq + eps**2)$")
-        _("f90(subst([c=eps], taylor(k(eps), eps, -c, {})));".format(order))
+        _("k(x) := (1 / (4 * %pi)) * log(rsq + x)$")
+        _("f90(subst([x=0], taylor(k(x), x, eps, {})));".format(order))
         #_("f90((1/2) * (k(radius) + subst([c=radius], taylor(k(radius), radius, -c, {}))));".format(order))
         #_("f90(taylor(k(e), e, -c, {}));".format(order))
 
